@@ -1,4 +1,4 @@
--
+--
 -- PostgreSQL database dump
 --
 
@@ -78,6 +78,7 @@ ALTER TABLE public.galaxy_galaxy_id_seq OWNER TO freecodecamp;
 --
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
+
 ALTER SEQUENCE public.galaxy_galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 
 
@@ -146,7 +147,8 @@ CREATE SEQUENCE public.planet_planet_id_seq
     NO MAXVALUE
     CACHE 1;
 
-    ALTER TABLE public.planet_planet_id_seq OWNER TO freecodecamp;
+
+ALTER TABLE public.planet_planet_id_seq OWNER TO freecodecamp;
 
 --
 -- Name: planet_planet_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
@@ -186,7 +188,7 @@ CREATE SEQUENCE public.star_star_id_seq
     CACHE 1;
 
 
-    ALTER TABLE public.star_star_id_seq OWNER TO freecodecamp;
+ALTER TABLE public.star_star_id_seq OWNER TO freecodecamp;
 
 --
 -- Name: star_star_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
@@ -263,6 +265,7 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 --
 
 ALTER TABLE ONLY public.types ALTER COLUMN types_id SET DEFAULT nextval('public.types_types_id_seq'::regclass);
+
 
 --
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
@@ -384,7 +387,6 @@ SELECT pg_catalog.setval('public.types_types_id_seq', 4, true);
 -- Name: galaxy galaxy_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
-
 ALTER TABLE ONLY public.galaxy
     ADD CONSTRAINT galaxy_name_key UNIQUE (name);
 
@@ -465,7 +467,6 @@ ALTER TABLE ONLY public.types
 -- Name: types types_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
-
 ALTER TABLE ONLY public.types
     ADD CONSTRAINT types_pkey PRIMARY KEY (types_id);
 
@@ -497,3 +498,4 @@ ALTER TABLE ONLY public.star
 --
 -- PostgreSQL database dump complete
 --
+
